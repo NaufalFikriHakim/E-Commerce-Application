@@ -35,6 +35,13 @@ public class OrderController {
 		return new ResponseEntity<OrderDTO>(order, HttpStatus.CREATED);
 	}
 
+	@PostMapping("/public/users/{email}/carts/{cartId}/payments/card/{cardNumber}/{cvc}/order")
+	public ResponseEntity<OrderDTO> orderProductUsingCard(@PathVariable String email, @PathVariable Long cartId, @PathVariable Long cardNumber, @PathVariable Long cvc){
+		OrderDTO order = orderService.placeOrderByCard(email, cartId, cardNumber, cvc);
+
+		return new ResponseEntity<OrderDTO>(order, HttpStatus.CREATED);
+	}
+
 	@GetMapping("/admin/orders")
 	public ResponseEntity<OrderResponse> getAllOrders(
 			@RequestParam(name = "pageNumber", defaultValue = AppConstants.PAGE_NUMBER, required = false) Integer pageNumber,
