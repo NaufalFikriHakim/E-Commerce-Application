@@ -662,6 +662,41 @@
 					"response": []
 				},
 				{
+					"name": "Payment Product By User Email Cart Id Payment Method Using Card",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/public/users/user@gmail.com/carts/2/payments/card/123456778213123/123/order",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"public",
+								"users",
+								"user@gmail.com",
+								"carts",
+								"2",
+								"payments",
+								"card",
+								"123456778213123",
+								"123",
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Update Order Status",
 					"request": {
 						"method": "PUT",
